@@ -1,17 +1,18 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import classes from './MainHeader.module.css';
 //Why Link?
 //using Link current page wont refresh
 //using <a></a> will refresh current page, then render the route.
 const MainHeader = () => {
   return (
-    <header>
+    <header className={classes.header}>
       <nav>
         <ul>
           <li>
-            <Link to="/welcome">Go to Welcome Page</Link>
+            <NavLink activeClassName={classes.active} to="/welcome">Welcome</NavLink>
           </li>
           <li>
-            <Link to="/product">Go to Product Page</Link>
+            <NavLink activeClassName={classes.active} to="/product">Products</NavLink>
           </li>
         </ul>
       </nav>
