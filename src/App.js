@@ -1,3 +1,4 @@
+import { Redirect } from "react-router-dom";
 import { Route, Switch } from "react-router-dom";
 import MainHeader from "./components/MainHeader";
 import Product from "./pages/Product";
@@ -12,6 +13,9 @@ function App() {
       </header>
       <main>
         <Switch>
+        <Route path="/" exact>
+            <Redirect to='/welcome'></Redirect>
+          </Route>
           <Route path="/welcome">
             <Welcome></Welcome>
           </Route>
@@ -37,3 +41,5 @@ export default App;
 //if we use switch then, only will be selected, 
 //then only products page will be loaded when we load product details page
 //so exact is used, so that the route is rendered only if url is matched fully exactly
+
+//redirect- redirects user to mentioned route
